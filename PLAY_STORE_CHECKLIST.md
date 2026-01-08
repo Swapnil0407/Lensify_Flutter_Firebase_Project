@@ -33,8 +33,8 @@ If you ever change the package ID again, you must repeat the Firebase “Add And
 
 **CRITICAL:** You shared these publicly:
 ```
-Store Pass: lensify123
-Key Pass: lensify123
+Store Pass: [REDACTED]
+Key Pass: [REDACTED]
 ```
 
 ### 🛡️ What to Do:
