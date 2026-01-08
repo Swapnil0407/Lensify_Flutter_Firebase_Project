@@ -1,0 +1,29 @@
+{
+	"firestore": {
+		"rules": "firestore.rules",
+		"indexes": "firestore.indexes.json"
+	},
+	"flutter": {
+		"platforms": {
+			"android": {
+				"default": {
+					"projectId": "lensify-41e8b",
+					"appId": "1:44988924524:android:d07f8eea3cd071dbd98e49",
+					"fileOutput": "android/app/google-services.json"
+				}
+			},
+			"dart": {
+				"lib/firebase_options.dart": {
+					"projectId": "lensify-41e8b",
+					"configurations": {
+						"android": "1:44988924524:android:d07f8eea3cd071dbd98e49",
+						"ios": "1:44988924524:ios:7ca08fa9574fb5c4d98e49",
+						"macos": "1:44988924524:ios:7ca08fa9574fb5c4d98e49",
+						"web": "1:44988924524:web:19b913c95851fed3d98e49",
+						"windows": "1:44988924524:web:4059ada6e2b3842bd98e49"
+					}
+				}
+			}
+		}
+	}
+}

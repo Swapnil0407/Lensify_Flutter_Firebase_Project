@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "44988924524",
+    "project_id": "lensify-41e8b",
+    "storage_bucket": "lensify-41e8b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44988924524:android:d07f8eea3cd071dbd98e49",
+        "android_client_info": {
+          "package_name": "com.example.lenscart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCueyZBVzx0NDT5wk1Us96N3dG55YpvwCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
