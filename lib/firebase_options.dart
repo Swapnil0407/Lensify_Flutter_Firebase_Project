@@ -52,7 +52,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCueyZBVzx0NDT5wk1Us96N3dG55YpvwCg',
-    appId: '1:44988924524:android:d07f8eea3cd071dbd98e49',
+    appId: '1:44988924524:android:e407069d47f73ed7d98e49',
     messagingSenderId: '44988924524',
     projectId: 'lensify-41e8b',
     storageBucket: 'lensify-41e8b.firebasestorage.app',

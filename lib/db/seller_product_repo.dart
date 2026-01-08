@@ -2,7 +2,7 @@ import 'package:sqflite/sqflite.dart';
 
 import '../Screens/PurchaseSheets/shared/frame_product.dart';
 import '../models/seller_product.dart';
-import 'package:lenscart/db/app_db.dart';
+import 'package:lensify/db/app_db.dart';
 
 class SellerProductRepo {
   const SellerProductRepo();

@@ -1,4 +1,4 @@
-package com.example.lenscart
+package com.swapnil.lensify
 
 import io.flutter.embedding.android.FlutterActivity
 

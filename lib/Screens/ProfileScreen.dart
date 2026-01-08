@@ -4,10 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'SellerAddProductScreen.dart';
 import 'BuyerAddressScreen.dart';
 import 'AboutUsScreen.dart';
+import 'MainNavScreen.dart';
+import 'ProductDetailsScreen.dart';
 import 'shared/product_controller.dart';
 import 'shared/product_image.dart';
-import 'ProductDetailsScreen.dart';
-import 'MainNavScreen.dart';
 import 'shared/profile_mode_controller.dart';
 
 class ProfileScreen extends StatefulWidget {

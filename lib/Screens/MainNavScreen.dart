@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'CartScreen.dart';
 import 'HomeScreen.dart';
+import 'CartScreen.dart';
 import 'OrdersScreen.dart';
 import 'ProfileScreen.dart';
 
@@ -49,11 +49,11 @@ class _MainNavScreenState extends State<MainNavScreen> {
       child: Scaffold(
         body: IndexedStack(
           index: _index,
-          children: const [
-            homeScreen(),
-            OrdersScreen(),
-            CartScreen(),
-            ProfileScreen(),
+          children: [
+            const homeScreen(),
+            const OrdersScreen(),
+            const CartScreen(),
+            const ProfileScreen(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -76,3 +76,8 @@ class _MainNavScreenState extends State<MainNavScreen> {
     );
   }
 }
+
+
+
+
+

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lenscart/Screens/PurchaseSheets/shared/frame_product.dart';
+import 'package:lensify/Screens/PurchaseSheets/shared/frame_product.dart';
 
 class OrderItem {
   final String id;

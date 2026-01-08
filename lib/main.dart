@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:lenscart/Screens/FavoritesScreen.dart';
-import 'package:lenscart/Screens/LoginScreen.dart';
-import 'package:lenscart/Screens/SignUpScreen.dart';
-import 'package:lenscart/Screens/SplashScreen.dart';
-import 'package:lenscart/Screens/MainNavScreen.dart';
+import 'package:lensify/Screens/FavoritesScreen.dart';
+import 'package:lensify/Screens/LoginScreen.dart';
+import 'package:lensify/Screens/SignUpScreen.dart';
+import 'package:lensify/Screens/SplashScreen.dart';
+import 'package:lensify/Screens/MainNavScreen.dart';
 import 'firebase_options.dart';
 
-import 'package:lenscart/Screens/EyeGlasses/EyglassesKids.dart';
-import 'package:lenscart/Screens/EyeGlasses/EyglassesMen.dart';
-import 'package:lenscart/Screens/EyeGlasses/EyglassesWomen.dart';
-import 'package:lenscart/Screens/SunGlasses/SunglassesKids.dart';
-import 'package:lenscart/Screens/SunGlasses/SunglassesMen.dart';
-import 'package:lenscart/Screens/SunGlasses/SunglassesWomen.dart';
+import 'package:lensify/Screens/EyeGlasses/EyglassesKids.dart';
+import 'package:lensify/Screens/EyeGlasses/EyglassesMen.dart';
+import 'package:lensify/Screens/EyeGlasses/EyglassesWomen.dart';
+import 'package:lensify/Screens/SunGlasses/SunglassesKids.dart';
+import 'package:lensify/Screens/SunGlasses/SunglassesMen.dart';
+import 'package:lensify/Screens/SunGlasses/SunglassesWomen.dart';
 
-import 'package:lenscart/Screens/shared/cart_controller.dart';
-import 'package:lenscart/Screens/shared/product_controller.dart';
-import 'package:lenscart/Screens/shared/order_controller.dart';
-import 'package:lenscart/Screens/shared/profile_mode_controller.dart';
+import 'package:lensify/Screens/shared/cart_controller.dart';
+import 'package:lensify/Screens/shared/product_controller.dart';
+import 'package:lensify/Screens/shared/order_controller.dart';
+import 'package:lensify/Screens/shared/profile_mode_controller.dart';
 
 import 'app_keys.dart';
 

@@ -50,7 +50,7 @@ class OrdersScreen extends StatelessWidget {
                   items: inProgress,
                   emptyText: 'No orders in progress',
                   subtitleBuilder: (o) =>
-                      '${_etaText(o.eta)} • Ordered ${_formatDate(o.orderedAt)}',
+                      '${_etaText(o.eta)} \u2022 Ordered ${_formatDate(o.orderedAt)}',
                   trailingBuilder: (o) => const _OrderStatusChip(text: 'In Progress'),
                   detailsBuilder: (o) => _OrderTimingDetails(eta: o.eta),
                 ),
@@ -276,3 +276,4 @@ class _Row extends StatelessWidget {
     );
   }
 }
+
