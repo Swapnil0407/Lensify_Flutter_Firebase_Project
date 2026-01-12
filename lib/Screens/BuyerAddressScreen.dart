@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../db/buyer_profile_repo.dart';
+import 'shared/screen_entrance.dart';
 
 class BuyerAddressScreen extends StatefulWidget {
   const BuyerAddressScreen({super.key});
@@ -96,30 +97,31 @@ class _BuyerAddressScreenState extends State<BuyerAddressScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFFFF7ED),
-      appBar: AppBar(
+    return ScreenEntrance(
+      child: Scaffold(
         backgroundColor: const Color(0xFFFFF7ED),
-        title: const Text('My Address'),
-      ),
-      body: _loading
-          ? const Center(child: CircularProgressIndicator())
-          : AbsorbPointer(
-              absorbing: _saving,
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(16),
-                child: Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.black12),
-                  ),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFFFF7ED),
+          title: const Text('My Address'),
+        ),
+        body: _loading
+            ? const Center(child: CircularProgressIndicator())
+            : AbsorbPointer(
+                absorbing: _saving,
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(16),
+                  child: Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: Colors.black12),
+                    ),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
                         const Text(
                           'Saved Delivery Address',
                           style: TextStyle(fontWeight: FontWeight.w900),
@@ -178,6 +180,7 @@ class _BuyerAddressScreenState extends State<BuyerAddressScreen> {
                 ),
               ),
             ),
+      ),
     );
   }
 }

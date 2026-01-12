@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'shared/order_controller.dart';
 import 'shared/product_image.dart';
+import 'shared/screen_entrance.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});
@@ -23,52 +24,54 @@ class OrdersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = OrderScope.of(context);
 
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        backgroundColor: const Color(0xFFFFF7ED),
-        appBar: AppBar(
+    return ScreenEntrance(
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
           backgroundColor: const Color(0xFFFFF7ED),
-          title: const Text('My Orders'),
-          bottom: const TabBar(
-            tabs: [
-              Tab(text: 'Order in Progress'),
-              Tab(text: 'Completed'),
-            ],
-          ),
-        ),
-        body: AnimatedBuilder(
-          animation: controller,
-          builder: (context, _) {
-            final orders = controller.orders;
-            final inProgress = orders.where((o) => !o.isDelivered).toList();
-            final completed = orders.where((o) => o.isDelivered).toList();
-
-            return TabBarView(
-              children: [
-                _OrdersList(
-                  items: inProgress,
-                  emptyText: 'No orders in progress',
-                  subtitleBuilder: (o) =>
-                      '${_etaText(o.eta)} \u2022 Ordered ${_formatDate(o.orderedAt)}',
-                  trailingBuilder: (o) => const _OrderStatusChip(text: 'In Progress'),
-                  detailsBuilder: (o) => _OrderTimingDetails(eta: o.eta),
-                ),
-                _OrdersList(
-                  items: completed,
-                  emptyText: 'No completed orders',
-                  subtitleBuilder: (o) {
-                    final deliveredOn = o.deliveredOn;
-                    return deliveredOn == null
-                        ? 'Delivered'
-                        : 'Delivered ${_formatDate(deliveredOn)}';
-                  },
-                  trailingBuilder: (o) => const _OrderStatusChip(text: 'Delivered'),
-                  detailsBuilder: (o) => null,
-                ),
+          appBar: AppBar(
+            backgroundColor: const Color(0xFFFFF7ED),
+            title: const Text('My Orders'),
+            bottom: const TabBar(
+              tabs: [
+                Tab(text: 'Order in Progress'),
+                Tab(text: 'Completed'),
               ],
-            );
-          },
+            ),
+          ),
+          body: AnimatedBuilder(
+            animation: controller,
+            builder: (context, _) {
+              final orders = controller.orders;
+              final inProgress = orders.where((o) => !o.isDelivered).toList();
+              final completed = orders.where((o) => o.isDelivered).toList();
+
+              return TabBarView(
+                children: [
+                  _OrdersList(
+                    items: inProgress,
+                    emptyText: 'No orders in progress',
+                    subtitleBuilder: (o) =>
+                        '${_etaText(o.eta)} • Ordered ${_formatDate(o.orderedAt)}',
+                    trailingBuilder: (o) => const _OrderStatusChip(text: 'In Progress'),
+                    detailsBuilder: (o) => _OrderTimingDetails(eta: o.eta),
+                  ),
+                  _OrdersList(
+                    items: completed,
+                    emptyText: 'No completed orders',
+                    subtitleBuilder: (o) {
+                      final deliveredOn = o.deliveredOn;
+                      return deliveredOn == null
+                          ? 'Delivered'
+                          : 'Delivered ${_formatDate(deliveredOn)}';
+                    },
+                    trailingBuilder: (o) => const _OrderStatusChip(text: 'Delivered'),
+                    detailsBuilder: (o) => null,
+                  ),
+                ],
+              );
+            },
+          ),
         ),
       ),
     );
@@ -276,4 +279,3 @@ class _Row extends StatelessWidget {
     );
   }
 }
-

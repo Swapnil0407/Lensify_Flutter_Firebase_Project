@@ -7,6 +7,7 @@ import 'package:image/image.dart' as img;
 import 'PurchaseSheets/shared/frame_product.dart';
 import 'shared/product_controller.dart';
 import 'shared/profile_mode_controller.dart';
+import 'shared/screen_entrance.dart';
 
 import '../app_keys.dart';
 
@@ -264,21 +265,22 @@ class _SellerAddProductScreenState extends State<SellerAddProductScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFFFF7ED),
-      appBar: AppBar(
+    return ScreenEntrance(
+      child: Scaffold(
         backgroundColor: const Color(0xFFFFF7ED),
-        title: Text(
-          widget.existing == null ? 'Add Product (Seller)' : 'Edit Product (Seller)',
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFFFF7ED),
+          title: Text(
+            widget.existing == null ? 'Add Product (Seller)' : 'Edit Product (Seller)',
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
               const Text(
                 'Basic Info',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),
@@ -472,7 +474,8 @@ class _SellerAddProductScreenState extends State<SellerAddProductScreen> {
                   style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),
                 ),
               ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

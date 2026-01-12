@@ -6,6 +6,7 @@ import 'SellerAddProductScreen.dart';
 import 'shared/cart_controller.dart';
 import 'shared/product_controller.dart';
 import 'shared/product_image.dart';
+import 'shared/screen_entrance.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   final FrameProduct product;
@@ -38,12 +39,13 @@ class ProductDetailsScreen extends StatelessWidget {
         .cast<SellerProduct?>()
         .firstOrNull;
 
-    return Scaffold(
-      backgroundColor: const Color(0xFFFFF7ED),
-      appBar: AppBar(
+    return ScreenEntrance(
+      child: Scaffold(
         backgroundColor: const Color(0xFFFFF7ED),
-        title: const Text('Product Details'),
-        actions: [
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFFFF7ED),
+          title: const Text('Product Details'),
+          actions: [
           if (sellerProduct != null)
             IconButton(
               icon: const Icon(Icons.edit_outlined),
@@ -60,13 +62,13 @@ class ProductDetailsScreen extends StatelessWidget {
             icon: const Icon(Icons.shopping_cart_outlined),
             onPressed: () => Navigator.pushNamed(context, "/cart"),
           ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+          ],
+        ),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: AspectRatio(
@@ -153,7 +155,8 @@ class ProductDetailsScreen extends StatelessWidget {
                 ),
               ],
             ),
-          ],
+            ],
+          ),
         ),
       ),
     );

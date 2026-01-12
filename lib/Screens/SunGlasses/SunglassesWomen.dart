@@ -1,6 +1,7 @@
 import"package:flutter/material.dart";
 
 import '../ShapeProductsScreen.dart';
+import '../shared/screen_entrance.dart';
 
 class SunglassWomen extends StatefulWidget{
   const SunglassWomen({super.key});
@@ -23,13 +24,14 @@ class _SunglassWomenState extends State<SunglassWomen>{
   }
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-      backgroundColor: Color(0xFFFFF7ED),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFFFF7ED),
-        title: const Text("Women's Sunglasses"),
-      ),
-      body:Column(
+    return ScreenEntrance(
+      child: Scaffold(
+        backgroundColor: Color(0xFFFFF7ED),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFFFF7ED),
+          title: const Text("Women's Sunglasses"),
+        ),
+        body:Column(
         mainAxisAlignment:MainAxisAlignment.spaceEvenly,
         children: [
           Row(
@@ -155,7 +157,7 @@ class _SunglassWomenState extends State<SunglassWomen>{
                         offset:Offset(0,3)
                       )
                     ],
-                    image:DecorationImage(image:  AssetImage("assets/images/Frame/SunWomenGeometric.jpg"),fit:BoxFit.cover,alignment:Alignment.bottomCenter,)
+                    image:DecorationImage(image:  AssetImage("assets/images/Frame/SunWomenGeo.jpg"),fit:BoxFit.cover,alignment:Alignment.bottomCenter,)
                   ),
                   child: Container(
                           width: double.infinity,
@@ -178,6 +180,7 @@ class _SunglassWomenState extends State<SunglassWomen>{
         ],
       )
 
+      ),
     );
   }
 }

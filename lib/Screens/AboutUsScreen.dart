@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'shared/screen_entrance.dart';
+
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
 
@@ -67,17 +69,18 @@ class AboutUsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFFFF7ED),
-      appBar: AppBar(
+    return ScreenEntrance(
+      child: Scaffold(
         backgroundColor: const Color(0xFFFFF7ED),
-        title: const Text("About Us"),
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFFFF7ED),
+          title: const Text("About Us"),
+        ),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
             // App Logo & Name
             Container(
               padding: const EdgeInsets.all(24),
@@ -308,7 +311,8 @@ class AboutUsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-          ],
+            ],
+          ),
         ),
       ),
     );

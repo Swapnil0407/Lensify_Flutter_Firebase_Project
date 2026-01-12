@@ -1,6 +1,7 @@
 import"package:flutter/material.dart";
 
 import '../ShapeProductsScreen.dart';
+import '../shared/screen_entrance.dart';
 
 class EyeglassMen extends StatefulWidget{
   const EyeglassMen({super.key});
@@ -23,13 +24,14 @@ class _EyeglassMenState extends State<EyeglassMen>{
   }
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-      backgroundColor: Color(0xFFFFF7ED),
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFFFF7ED),
-        title: const Text("Men's Eyeglasses"),
-      ),
-      body:Column(
+    return ScreenEntrance(
+      child: Scaffold(
+        backgroundColor: Color(0xFFFFF7ED),
+        appBar: AppBar(
+          backgroundColor: const Color(0xFFFFF7ED),
+          title: const Text("Men's Eyeglasses"),
+        ),
+        body:Column(
         mainAxisAlignment:MainAxisAlignment.spaceEvenly,
         children: [
           Row(
@@ -179,6 +181,7 @@ class _EyeglassMenState extends State<EyeglassMen>{
         ],
       )
 
+      ),
     );
   }
 }

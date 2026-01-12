@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lensify/Screens/shared/product_controller.dart';
 import '../ShapeProductsScreen.dart';
+import '../shared/screen_entrance.dart';
 
 class EyeglassKids extends StatefulWidget {
   const EyeglassKids({super.key});
@@ -84,20 +85,21 @@ class _EyeglassKidsState extends State<EyeglassKids> {
   Widget build(BuildContext context) {
     final products = ProductScope.of(context);
 
-    return Scaffold(
-      backgroundColor: const Color(0xFFFFF7ED),
-      body: SafeArea(
-        child: AnimatedBuilder(
-          animation: products,
-          builder: (context, _) {
-            if (!products.loadedFromDb) {
-              return const Center(child: CircularProgressIndicator());
-            }
+    return ScreenEntrance(
+      child: Scaffold(
+        backgroundColor: const Color(0xFFFFF7ED),
+        body: SafeArea(
+          child: AnimatedBuilder(
+            animation: products,
+            builder: (context, _) {
+              if (!products.loadedFromDb) {
+                return const Center(child: CircularProgressIndicator());
+              }
 
-            return SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: Column(
-                children: [
+              return SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Column(
+                  children: [
                   const Text(
                     "Kid's Eyeglasses",
                     style: TextStyle(
@@ -144,10 +146,11 @@ class _EyeglassKidsState extends State<EyeglassKids> {
                       ),
                     ],
                   ),
-                ],
-              ),
-            );
-          },
+                  ],
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
